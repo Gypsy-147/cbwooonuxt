@@ -7,10 +7,13 @@ import '@splidejs/vue-splide/css';
     <div>
         <Splide :options="{ rewind: true, type: 'loop', perPage: 3, gap: 10, autoplay: true }" aria-label="My Favorite Images">
         <SplideSlide>
-          <img src="/images/hero-3.jpg" alt="Sample 1" />
+          <img src="/images/product1.png" alt="Product 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src="/images/hero.jpeg" alt="Sample 2" />
+          <img src="/images/product2.png" alt="Product 2" />
+        </SplideSlide>
+        <SplideSlide>
+          <img src="/images/product3.png" alt="Product 3" />
         </SplideSlide>
       </Splide>
     </div>
