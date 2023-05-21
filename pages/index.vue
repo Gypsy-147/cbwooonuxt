@@ -1,3 +1,4 @@
+import { SplideSlide } from '@splidejs/vue-splide';
 <script lang="ts" setup>
 const { data } = await useAsyncGql('getProductCategories', { first: 6 });
 const productCategories = data.value?.productCategories?.nodes || [];
@@ -62,6 +63,10 @@ useHead({
           <p class="text-sm">24/7 Online support</p>
         </div>
       </div>
+    </section>
+
+    <section class="container my-16">
+      <SplidSlide />
     </section>
   </main>
 </template>

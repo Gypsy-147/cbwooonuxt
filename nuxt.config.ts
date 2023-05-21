@@ -22,6 +22,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       version: pkg.version,
+      LOGO: 'https://api.cbcustomswork.com/wp-content/uploads/2023/05/TCBTRUE.png'
     },
   },
 

@@ -6,7 +6,10 @@ const runtimeConfig = useRuntimeConfig();
   <div class="bg-white">
     <div class="container flex flex-wrap my-24 gap-12 justify-between md:gap-24">
       <div class="mr-auto">
-        <Logo />
+        <!-- <Logo /> -->
+        <div class="flex font-bold text-lg gap-2 items-center">
+          <span>Welcome to the CB CUSTOME WORK Store</span>
+        </div>
         <p class="mt-4 text-sm text-gray-700 xl:max-w-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl sit amet aliquam lacinia, nunc odio lacinia tortor, vel aliquam nisl lorem quis nunc. Sed
           euismod, nisl sit amet aliquam lacinia, nunc odio lacinia tortor, vel aliquam nisl lorem quis nunc.
@@ -53,7 +56,7 @@ const runtimeConfig = useRuntimeConfig();
     <div class="container border-t">
       <div class="copywrite">
         <p class="text-xs text-center py-4">
-          <a>CB CUSTOMS WORK SHOP v{{ runtimeConfig.public.version }}</a> - by
+          <a>CB CUSTOMS WORK v{{ runtimeConfig.public.version }}</a> - by
           <a target="_blank">Gypsy</a>
         </p>
       </div>
