@@ -15,7 +15,7 @@ const logoUrl = runtimeConfig?.public?.LOGO || null;
           clip-rule="evenodd" />
         <path fill="#7F54B2" d="M78 40.4c2.667-4.533 9.333-4.533 12 0l29.06 49.4c2.667 4.533-.666 10.199-5.999 10.199H54.938c-5.333 0-8.666-5.666-6-10.199L78 40.4z" />
       </svg>
-      <span>WooNuxt</span>
+      <span>CB CUSTOMS WORK</span>
     </div>
   </NuxtLink>
 </template>
