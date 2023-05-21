@@ -53,8 +53,8 @@ const runtimeConfig = useRuntimeConfig();
     <div class="container border-t">
       <div class="copywrite">
         <p class="text-xs text-center py-4">
-          <a href="https://woonuxt.com">WooNuxt v{{ runtimeConfig.public.version }}</a> - by
-          <a href="https://scottyzen.com" target="_blank">Scottyzen</a>
+          <a href="https://woonuxt.com">CB CUSTOMS WORK SHOP v{{ runtimeConfig.public.version }}</a> - by
+          <a target="_blank">Gypsy</a>
         </p>
       </div>
     </div>
