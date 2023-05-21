@@ -4,8 +4,8 @@ const productCategories = data.value?.productCategories?.nodes || [];
 const runtimeConfig = useRuntimeConfig();
 
 useHead({
-  title: `Home | WooNuxt`,
-  meta: [{ name: 'description', content: 'The best ecommerce store in the world' }],
+  title: `Home | CB CUSTOMS WORK`,
+  meta: [{ name: 'description', content: 'CB CUSTOMS WORK STORE SLAMMED CAR GANG' }],
   link: [{ rel: 'canonical', href: runtimeConfig?.public?.FRONT_END_URL }],
 });
 </script>
