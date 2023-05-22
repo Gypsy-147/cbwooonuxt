@@ -55,7 +55,6 @@ export function useCheckout() {
       customerNote: orderInput.value.customerNote,
       shipToDifferentAddress: orderInput.value.shipToDifferentAddress,
     });
-
     if ((await checkout?.result) === 'success') {
       refreshCart();
     }
@@ -68,15 +67,15 @@ export function useCheckout() {
       const runtimeConfig = useRuntimeConfig();
       const frontEndUrl = runtimeConfig?.public?.FRONT_END_URL;
       let redirectUrl = checkout?.redirect || '';
-
       const payPalReturnUrl = `${frontEndUrl}/checkout/order-received/${orderId}/?key=${orderKey}`;
       const payPalCancelUrl = `${frontEndUrl}/checkout/?cancel_order=true`;
 
       redirectUrl = replaceQueryParam('return', payPalReturnUrl, redirectUrl);
       redirectUrl = replaceQueryParam('cancel_return', payPalCancelUrl, redirectUrl);
       redirectUrl = replaceQueryParam('bn', 'WooNuxt_Cart', redirectUrl);
-
-      window.location.href = redirectUrl;
+      
+      console.log(checkout?.redirect);
+      // window.location.href = redirectUrl;
     } else {
       router.push(`/checkout/order-received/${orderId}/?key=${orderKey}`);
     }
