@@ -129,10 +129,9 @@ const updateSelectedVariations = (variations: Variation[]) => {
               min="1"
               aria-label="Quantity"
               class="bg-white border rounded-lg flex text-left p-2.5 w-20 gap-4 items-center justify-center focus:outline-none" />
-            <AddToCartButton class="flex-1 w-full md:max-w-xs" :disabled="!activeVariation && !!product.variations" :class="{ loading: isUpdatingCart }" />
+            <AddToCartButton class="flex-1 w-full md:max-w-xs" :disabled="!activeVariation && !!product.variations || type.stockStatus === 'OUT_OF_STOCK'" :class="{ loading: isUpdatingCart }" />
           </div>
         </form>
-
         <div class="grid gap-2 my-8 text-sm">
           <div class="flex items-center gap-2">
             <span class="text-gray-400">{{ $t('messages.shop.category', 2) }}:</span>

@@ -61,7 +61,7 @@ const payNow = async () => {
     <form v-if="cart" class="container flex flex-wrap items-start gap-8 my-16 justify-evenly md:flex-row-reverse lg:gap-24" @submit.prevent="payNow">
       <OrderSummary>
         <button
-          v-if="orderInput.paymentMethod === 'paypal'"
+          v-if="orderInput.paymentMethod === 'ppcp-gateway'"
           class="rounded-lg flex font-semibold bg-[#EAB434] shadow-md mt-4 text-white text-lg text-center w-full p-3 gap-4 justify-center items-center hover:bg-[#EAB434] disabled:cursor-not-allowed disabled:opacity-50"
           :disabled="isProcessingOrder || isUpdatingCart">
           <img src="/images/paypal.svg" alt="PayPal" class="w-16" />

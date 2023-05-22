@@ -5,6 +5,24 @@ const props = defineProps({
 });
 const productType = computed(() => (props.item.variation ? props.item.variation?.node : props.item.product?.node));
 const quantity = ref(props.item.quantity);
+const route = useRoute();
+const router = useRouter();
+let path = ref('')
+
+
+function checkroute(goto) {
+  if (route.path !== '/') {
+    path = route.path.match(/^\/([^?\/]+)/)[1]
+    if (path === 'product') {
+      router.push({ path: `${goto}` });
+    } else {
+      router.push({ path: `product/${goto}` });
+    }
+  } else {
+    path = route.path
+    router.push({ path: `product/${goto}` });
+  }
+}
 
 const updateQuantity = () => {
   updateItemQuantity(props.item.key, quantity.value);
@@ -13,19 +31,21 @@ const updateQuantity = () => {
 
 <template>
   <li v-if="item" class="flex items-center gap-4">
-    <NuxtLink :to="props.item.product.node.slug">
+    <!-- <NuxtLink @click="checkroute(props.item.product.node.slug)" :to="path === 'product' ? props.item.product.node.slug : `product/${props.item.product.node.slug}`"> -->
+    <NuxtLink @click="checkroute(props.item.product.node.slug)">
       <img
         v-if="productType.image"
         width="64"
         height="64"
         class="w-16 h-16 rounded-lg"
-        :src="productType.image.cartSourceUrl"
+        :src="productType.image.sourceUrl"
         :alt="productType.image.altText || productType.name"
         :title="productType.image.altText || productType.name"
         loading="lazy" />
     </NuxtLink>
     <div class="flex-1">
-      <NuxtLink class="leading-tight" :to="props.item.product.node.slug">{{ productType.name }}</NuxtLink>
+      <NuxtLink class="leading-tight" @click="checkroute(props.item.product.node.slug)">{{ productType.name }}</NuxtLink>
+      <!-- <NuxtLink class="leading-tight" @click="checkroute(props.item.product.node.slug)" :to="path === 'product' ? props.item.product.node.slug : `product/${props.item.product.node.slug}`">{{ productType.name }}</NuxtLink> -->
       <ProductPrice class="mt-1 text-xs" :sale-price="productType.salePrice" :regular-price="productType.regularPrice" />
     </div>
     <input
