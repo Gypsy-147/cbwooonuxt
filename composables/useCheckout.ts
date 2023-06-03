@@ -74,8 +74,8 @@ export function useCheckout() {
       redirectUrl = replaceQueryParam('cancel_return', payPalCancelUrl, redirectUrl);
       redirectUrl = replaceQueryParam('bn', 'WooNuxt_Cart', redirectUrl);
       
-      console.log(checkout?.redirect);
-      // window.location.href = redirectUrl;
+      // console.log(checkout?.redirect);
+      window.location.href = redirectUrl;
     } else {
       router.push(`/checkout/order-received/${orderId}/?key=${orderKey}`);
     }
