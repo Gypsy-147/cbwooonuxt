@@ -63,7 +63,7 @@ export function useCheckout() {
     const orderKey = checkout?.order?.orderKey;
 
     // PayPal redirect
-    if ((await checkout?.redirect) && orderInput.value.paymentMethod === 'ppcp-gateway') {
+    if ((await checkout?.redirect) && orderInput.value.paymentMethod === 'paypal') {
       const runtimeConfig = useRuntimeConfig();
       const frontEndUrl = runtimeConfig?.public?.FRONT_END_URL;
       let redirectUrl = checkout?.redirect || '';

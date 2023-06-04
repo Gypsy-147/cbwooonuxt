@@ -22,7 +22,7 @@ onMounted(() => {
   <div class="grid gap-4 leading-tight payment-options">
     <div v-for="gateway in paymentGateways" :key="gateway.id" class="option" :class="{ 'active-option': paymentMethod === gateway.id }" @click="updatePaymentMethod(gateway.id)">
       <icon v-if="gateway.id === 'stripe'" name="ion:card-outline" size="20" class="text-gray-600" />
-      <icon v-else-if="gateway.id === 'ppcp-gateway'" name="ion:logo-paypal" size="20" class="text-gray-600" />
+      <icon v-else-if="gateway.id === 'paypal'" name="ion:logo-paypal" size="20" class="text-gray-600" />
       <icon v-else name="ion:cash-outline" size="20" class="text-gray-600" />
       <span>{{ gateway.title }}</span>
       <icon name="ion:checkmark-circle" size="20" class="ml-auto text-primary checkmark" />
